@@ -14,13 +14,13 @@ function mountainTemplate(mountain) {
      <h4 class="mountain-desc">${mountain.desc} </h4>
      <p><strong>Effort:</strong> ${mountain.effort}</p>
      <strong>Coordinates:</strong> lat: ${mountain.coords.lat} lng: ${mountain.coords.lng}
-     <strong>Sunrise:</strong> ${mySunrise}
+
      </div>
      `;
  }
- 
+ //      <strong>Sunrise:</strong> ${mySunrise} line 17
  document.getElementById("mountains").innerHTML = `
-   <h1 class="app-title"> ${mountainsArray.length} Mountains docuemented</h1>
+   <h1 class="app-title"> ${mountainsArray.length} Mountains documented</h1>
    ${mountainsArray.map(mountainTemplate).join("")}
    <p class="footer">These ${mountainsArray.length} mountants were added recently. Check back soon for updates.</p>
  `;  
