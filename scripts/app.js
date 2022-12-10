@@ -20,7 +20,7 @@ function mountainTemplate(mountain) {
  }
  
  document.getElementById("mountains").innerHTML = `
-   <h1 class="app-title"> ${mountainsArray.length} Mountains to climb</h1>
+   <h1 class="app-title"> ${mountainsArray.length} Mountains docuemented</h1>
    ${mountainsArray.map(mountainTemplate).join("")}
    <p class="footer">These ${mountainsArray.length} mountants were added recently. Check back soon for updates.</p>
  `;  
