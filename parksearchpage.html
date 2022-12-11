@@ -44,10 +44,6 @@
             <a class="nav-link" href="mountainsinfo.html">Mountains Information</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>
   </nav>
@@ -55,14 +51,25 @@
 
 <!-- Begin page content -->
 <br>
-<main class="flex-shrink-0">
-  <div class="container">
-    <h1 class="mt-5">Find a place where Ronnie explored</h1>
-            <select id="statesList"></select>
-            <button id="searchState">Search State!</button>
-            <select id="parkList"></select>
-            <button id="searchPark">Search Park!</button>
-</main>
+<br>
+<br>
+<section class="container-g">
+<div id="selects">
+  <select id="SearchFilter" class="form-select text-bg-dark opacity-75 mb-4">
+    <option id="default">Search Parks By ...</option>
+    <option id="location">Location</option>
+    <option id="parkType">Park Type</option>
+    <option id="all">View All National Parks</option>
+  </select>
+  <select id="locationsList" class="form-select text-bg-dark opacity-75 mb-4"></select>
+  <select id="parkTypeList" class="form-select text-bg-dark opacity-75 mb-4"></select>
+  <select id="parkList" class="form-select text-bg-dark opacity-75 mb-4"></select>
+</div>
+<p id="extraData" class="h3 text-bg-dark opacity-75 text-center p-4 fw-bold"></p>
+            <div id="parksDescription" class="card opacity-75 m-5 p-4">
+                <!-- Content here is filled through JS -->
+            </div>
+</section>
 
 <footer class="footer mt-auto py-3 bg-light">
   <div class="container">
@@ -77,5 +84,6 @@
     <script src="scripts/nationalParkData.js"></script>
     <script src="scripts/parkTypeData.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/parkspage.js"></script>
   </body>
 </html>
