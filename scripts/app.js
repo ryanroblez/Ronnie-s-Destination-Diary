@@ -35,18 +35,28 @@ function mountainTemplate(mountain) {
    
      
   function loadData() {
-      var down = document.getElementById('mountain');
+
+    let myselectedvalue = document.getElementById("selectMountain").value;
+  
+    const filteredMountain = mountainsArray.filter(mountain => mountain.name === myselectedvalue)
+    console.log(filteredMountain);
+    let down = document.getElementById('selectMountain');
              for (let i = 0; i < mountainsArray.length; i++) {
-                 var optn = mountainsArray[i];
-                 var el = document.createElement("option");
+                 let optn = mountainsArray[i];
+                 let el = document.createElement("option");
                  el.textContent = optn;
                  el.value = optn;
                  down.appendChild(el);
              }
-             down.innerHTML = "Elements Added";
-         }
- 
-        
+             document.getElementById("mountains").innerHTML = `
+             <h1 class="app-title"> ${filteredMountain.length} Mountain documented!</h1>
+             ${filteredMountain.map(mountainTemplate).join("")}
+             <p class="footer">These ${filteredMountain.length} mountains were added recently. Check back soon for updates.</p>`
+          
+
+            }
+    
+
  
  
  // Get dropdown element from DOMttt
@@ -58,12 +68,11 @@ function mountainTemplate(mountain) {
   dropdown[dropdown.length] = new Option(mountainsArray[i].name);
 }
  
- function listMountain() {
-  let dropValue = document.getElementById("selectMountain").value;
-  let id = dropValue.replace(" ", "").replace(".","")
-  document.getElementById(id).scrollIntoView()
- }
+//  function listMountain() {
+//   let dropValue = document.getElementById("selectMountain").value;
+//   let id = dropValue.replace(" ", "").replace(".","")
+//   document.getElementById(id).scrollIntoView()
+//  }
  
 
 
- 
